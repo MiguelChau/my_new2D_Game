@@ -3171,6 +3171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8059626780439925412}
+  - component: {fileID: 810327368228724831}
   m_Layer: 0
   m_Name: R_Weapon_Slot
   m_TagString: Untagged
@@ -3194,6 +3195,22 @@ Transform:
   m_Father: {fileID: 8059408174582155890}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 18.251001}
+--- !u!114 &810327368228724831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8057967714539472504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33150eb97480574692ff0263ea112af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2659016705263788005}
+  attackRange: 0.2
+  attackDamage: 10
+  playerSideReference: {fileID: 0}
 --- !u!1 &8058005984101900310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,6 +3794,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635b81b59260dc5418b36817a2102e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderers:
+  - {fileID: 7864927412761147826}
+  - {fileID: 7864657191408000282}
+  - {fileID: 7863894031314224680}
+  - {fileID: 7863895685923264452}
+  - {fileID: 7864413585403144670}
+  - {fileID: 7864522901909635332}
+  - {fileID: 7863991998465957222}
+  - {fileID: 7865533963230148382}
+  - {fileID: 7864455929772766952}
+  - {fileID: 7863977145644979202}
+  - {fileID: 7864828916959246412}
+  - {fileID: 7864445666691141612}
+  - {fileID: 7863977249003135838}
+  - {fileID: 7865501325208738918}
+  - {fileID: 7864875604618349782}
+  - {fileID: 7865317931424626860}
+  - {fileID: 7865359789506281738}
+  - {fileID: 7864830146754628316}
+  - {fileID: 7864669621432766192}
+  - {fileID: 7864629756731315946}
+  - {fileID: 7864972345195670782}
+  - {fileID: 7865374963791806756}
+  - {fileID: 7864045483711716540}
+  - {fileID: 7865349909718970090}
+  - {fileID: 7864502764274932466}
+  - {fileID: 7863954074779951002}
+  - {fileID: 7865514263643779386}
+  - {fileID: 7865436724566077364}
+  - {fileID: 7864938014961362776}
+  - {fileID: 7863900383645050654}
+  - {fileID: 7864749443553724178}
+  - {fileID: 7864776228735296552}
+  - {fileID: 7864715586126900814}
+  - {fileID: 7864878302511853020}
+  - {fileID: 7865401217882540754}
+  - {fileID: 7864423139115442472}
+  - {fileID: 7864600478966398174}
+  - {fileID: 7864738712301977192}
+  - {fileID: 7864484630269384864}
+  - {fileID: 7864058438828097128}
+  - {fileID: 7864433022539708490}
+  - {fileID: 7864543514572325206}
+  color: {r: 1, g: 0, b: 0, a: 1}
+  duration: 0
 --- !u!1 &8058592218175134016
 GameObject:
   m_ObjectHideFlags: 0
