@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
 
     private Animator _currentPlayer;
     private float _currentSpeed;
+    public bool _isAttacking;
+
 
     private void Awake()
     {
@@ -26,6 +28,11 @@ public class Player : MonoBehaviour
             healthBase.OnKill += OnPlayerKill;
         }
         _currentPlayer = Instantiate(sOPlayerSetup.player, transform);
+
+        if(mycollider2D != null)
+        {
+            distanceToGround = mycollider2D.bounds.extents.y;
+        }
     }
 
     private void OnPlayerKill()
@@ -38,6 +45,7 @@ public class Player : MonoBehaviour
         HandleMoviment();
         HandleJump();
         IsGrounded();
+        Attack();
     }
 
     private void HandleMoviment()
@@ -45,18 +53,18 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftArrow))
         {
             myRigidBody.velocity = new Vector2(-_currentSpeed, myRigidBody.velocity.y);
-            if (myRigidBody.transform.localScale.x != 1)
+            if (myRigidBody.transform.localScale.x != -1)
             {
-                myRigidBody.transform.DOScaleX(1, sOPlayerSetup.playerSwipeDuration);
+                myRigidBody.transform.DOScaleX(-1, sOPlayerSetup.playerSwipeDuration);
             }
             _currentPlayer.SetBool(sOPlayerSetup.boolRun, true);
         }   
         else if(Input.GetKey(KeyCode.RightArrow))
         {
             myRigidBody.velocity = new Vector2(_currentSpeed, myRigidBody.velocity.y);
-            if (myRigidBody.transform.localScale.x != -1)
+            if (myRigidBody.transform.localScale.x != 1)
             {
-                myRigidBody.transform.DOScaleX(-1, sOPlayerSetup.playerSwipeDuration);
+                myRigidBody.transform.DOScaleX(1, sOPlayerSetup.playerSwipeDuration);
             }
             _currentPlayer.SetBool(sOPlayerSetup.boolRun, true);
         }
@@ -85,6 +93,11 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.Space) && IsGrounded())
         {
             myRigidBody.velocity = Vector2.up * sOPlayerSetup.jumpForce;
+            _currentPlayer.SetBool(sOPlayerSetup.boolJump, true);
+        }
+        else
+        {
+            _currentPlayer.SetBool(sOPlayerSetup.boolJump, false);
         }
     }
 
@@ -92,5 +105,23 @@ public class Player : MonoBehaviour
     {
         Debug.DrawRay(transform.position, -Vector2.up, Color.blue, distanceToGround + spaceToGround);
         return Physics2D.Raycast(transform.position, -Vector2.up, distanceToGround + spaceToGround);
+    }
+
+    private void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            _isAttacking = true;
+            _currentPlayer.SetTrigger("AttackTrigger");
+        }
+        else
+        {
+            _isAttacking = false;
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        healthBase.Damage(damage);
     }
 }

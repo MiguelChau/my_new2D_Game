@@ -6,7 +6,6 @@ using UnityEngine;
 public class HealthBase : MonoBehaviour
 {
     public Action OnKill;
-    public Animator animator;
 
     [Header("Life Stats")]
     public int startLife = 50;
@@ -14,6 +13,7 @@ public class HealthBase : MonoBehaviour
     public float delayToKill;
 
     public bool destroyOnKill = false;
+    private bool _isDead = false;
 
     private void Awake()
     {
@@ -22,16 +22,15 @@ public class HealthBase : MonoBehaviour
 
     private void Init()
     {
+        _isDead = false;
         _currentLife = startLife;
-    }
-
-    private void Update()
-    {
-        PlayHurtAnimation();
     }
 
     public void Damage(int damage)
     {
+        if (_isDead) return;
+        _currentLife -= damage;
+
         if(_currentLife <=0)
         {
             Kill();
@@ -40,21 +39,17 @@ public class HealthBase : MonoBehaviour
 
     private void Kill()
     {
+        _isDead = true; 
+
         if(destroyOnKill)
         {
             Destroy(gameObject, delayToKill);
         }
+        OnKill?. Invoke();
     }
 
-    private void PlayHurtAnimation()
+    public void Hurt()
     {
-        if(_currentLife / startLife <= 0.5f)
-        {
-            animator.SetBool("Hurt", true);
-        }
-        else
-        {
-            animator.SetBool("Hurt", false);
-        }
+        Damage(1);
     }
 }

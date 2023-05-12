@@ -4,27 +4,15 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
-    public Animator animator;
+
     public float attackRange = 0.2f;
     public int attackDamage;
     public Transform playerSideReference;
+    public LayerMask enemyLayers;
 
     private void Awake()
     {
         playerSideReference = GameObject.FindAnyObjectByType<Player>().transform;
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            Attack();
-        }
-    }
-
-    private void Attack()
-    {
-        animator.SetTrigger("Attack");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -34,5 +22,11 @@ public class SwordAttack : MonoBehaviour
         {
             enemy.Damage(attackDamage);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
