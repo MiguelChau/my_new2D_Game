@@ -1955,8 +1955,8 @@ GameObject:
   - component: {fileID: 667043618}
   - component: {fileID: 667043616}
   - component: {fileID: 667043619}
-  - component: {fileID: 667043620}
   - component: {fileID: 667043621}
+  - component: {fileID: 667043622}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2014,27 +2014,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 667043616}
-  healthBase: {fileID: 667043620}
+  healthBase: {fileID: 667043622}
   sOPlayerSetup: {fileID: 11400000, guid: 2d4a870a9abb89342be7e85417b95637, type: 2}
   mycollider2D: {fileID: 667043621}
   distanceToGround: 0
   spaceToGround: 30
   _isAttacking: 0
---- !u!114 &667043620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667043615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cab17f76a5828241a6b5fd4abe42a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startLife: 5
-  delayToKill: 0
-  destroyOnKill: 0
 --- !u!61 &667043621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2061,6 +2046,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6581888, y: 4.0525327}
   m_EdgeRadius: 0
+--- !u!114 &667043622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667043615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cab17f76a5828241a6b5fd4abe42a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startLife: 50
+  delayToKill: 0.2
+  destroyOnKill: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,7 +3504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cab17f76a5828241a6b5fd4abe42a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLife: 100
+  startLife: 5
   delayToKill: 0.2
   destroyOnKill: 0
 --- !u!114 &998692536
@@ -3520,7 +3520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1713009235}
-  damage: 50
+  damage: 25
   triggerAttack: Attack
   triggerDie: Die
   healthBase: {fileID: 998692535}
@@ -7221,7 +7221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 270779684062769249, guid: 8ac69da4dd705e140aed37cd1c79192b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 270779684062769251, guid: 8ac69da4dd705e140aed37cd1c79192b, type: 3}
       propertyPath: m_RootOrder

@@ -38,6 +38,13 @@ public class Player : MonoBehaviour
     private void OnPlayerKill()
     {
         healthBase.OnKill -= OnPlayerKill;
+        _currentPlayer.SetTrigger(sOPlayerSetup.triggerDeath);
+
+
+        if (mycollider2D != null)
+        {
+            mycollider2D.enabled = false;
+        }
     }
 
     private void Update()
@@ -123,5 +130,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         healthBase.Damage(damage);
+    }
+
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 }
