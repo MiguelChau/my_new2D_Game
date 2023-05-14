@@ -31,20 +31,17 @@ public class EnemyBase : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-            {
+       
+           Debug.Log(collision.transform.name);
 
-
-            Debug.Log(collision.transform.name);
-
-            var health = collision.gameObject.GetComponent<HealthBase>();
+           var health = collision.gameObject.GetComponent<HealthBase>();
 
             if (health != null)
             {
-                health.Hurt();
+                health.Damage(damage);
                 PlayAttackAnimation();
             }
-        }
+        
 
     }
     public void Damage(int amount)

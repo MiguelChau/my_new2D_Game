@@ -9,7 +9,7 @@ public class HealthBase : MonoBehaviour
 
     [Header("Life Stats")]
     public int startLife = 50;
-    private float _currentLife;
+    public float _currentLife;
     public float delayToKill;
 
     public bool destroyOnKill = false;
@@ -46,10 +46,5 @@ public class HealthBase : MonoBehaviour
             Destroy(gameObject, delayToKill);
         }
         OnKill?. Invoke();
-    }
-
-    public void Hurt()
-    {
-        Damage(1);
     }
 }

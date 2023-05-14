@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileMagic : MonoBehaviour
 {
     public Vector3 direction;
+
     public float timeToDestroy = 1f;
     public float side = -1;
     public int damage;
