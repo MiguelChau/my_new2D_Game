@@ -7700,6 +7700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_JUMP_VFX
       objectReference: {fileID: 0}
+    - target: {fileID: 7567420100172621991, guid: fe4f465274bd7f24db759728dd320a81, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7567420100173051012, guid: fe4f465274bd7f24db759728dd320a81, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7743,6 +7747,10 @@ PrefabInstance:
     - target: {fileID: 7567420100173051012, guid: fe4f465274bd7f24db759728dd320a81, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567420100188211300, guid: fe4f465274bd7f24db759728dd320a81, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7567420100188254660, guid: fe4f465274bd7f24db759728dd320a81, type: 3}
       propertyPath: playOnAwake
