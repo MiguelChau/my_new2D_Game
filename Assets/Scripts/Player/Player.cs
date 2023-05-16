@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private float _currentSpeed;
     public bool _isAttacking;
 
+    public ParticleSystem jumpVFX;
+
 
     private void Awake()
     {
@@ -93,7 +95,14 @@ public class Player : MonoBehaviour
             _currentSpeed = sOPlayerSetup.speedRun;
         else
             _currentSpeed = sOPlayerSetup.speed;
+
+        //PlayRunVFX();
     }
+
+    /*private void PlayRunVFX()
+    {
+        VFXManager.Instance.PlayByTypeVFX(VFXManager.VFXType.RUN, transform.position);
+    }*/
 
     private void HandleJump()
     {
@@ -106,6 +115,15 @@ public class Player : MonoBehaviour
         {
             _currentPlayer.SetBool(sOPlayerSetup.boolJump, false);
         }
+
+        PlayJumpVFX();
+
+    }
+
+    private void PlayJumpVFX()
+    {
+        //if (jumpVFX != null) jumpVFX.Play();
+        VFXManager.Instance.PlayByTypeVFX(VFXManager.VFXType.JUMP, transform.position);
     }
 
     private bool IsGrounded()

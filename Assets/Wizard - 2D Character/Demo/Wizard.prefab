@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854848243bd3687448fd04f7172f5cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabProjectile: {fileID: 6110128201531782902, guid: 60f6c4a01770d5c40aa463fc880054cc, type: 3}
+  prefabProjectile: {fileID: -4112487804535728760, guid: a386fd46fc1ac414c96b0269a9beb3d6, type: 3}
   positionToShoot: {fileID: 6705951746823169185}
   timeBetweenShoot: 0.2
   playerSideReference: {fileID: 6697499145889304510}
