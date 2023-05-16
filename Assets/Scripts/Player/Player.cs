@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private float _currentSpeed;
     public bool _isAttacking;
 
-    public ParticleSystem jumpVFX;
+   // public ParticleSystem jumpVFX;
 
 
     private void Awake()
@@ -96,13 +96,13 @@ public class Player : MonoBehaviour
         else
             _currentSpeed = sOPlayerSetup.speed;
 
-        //PlayRunVFX();
+        PlayRunVFX();
     }
 
-    /*private void PlayRunVFX()
+    private void PlayRunVFX()
     {
         VFXManager.Instance.PlayByTypeVFX(VFXManager.VFXType.RUN, transform.position);
-    }*/
+    }
 
     private void HandleJump()
     {

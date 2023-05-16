@@ -7,6 +7,10 @@ public class ItemCollectableBase : MonoBehaviour
     public string compareTag = "Player";
     public GameObject graphicItem;
     public float timeToHide;
+    public ParticleSystem particleSystem;
+
+    [Header("Sounds")]
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -35,6 +39,7 @@ public class ItemCollectableBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-
+        if (particleSystem != null) particleSystem.Play();
+        if (audioSource != null) audioSource.Play();
     }
 }
