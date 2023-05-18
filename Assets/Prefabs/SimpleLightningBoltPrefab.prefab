@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 5579511768196104867}
   - component: {fileID: 5579511768195654045}
   - component: {fileID: -4112487804535728760}
-  - component: {fileID: -246485123521442416}
+  - component: {fileID: -3677577989021970287}
   m_Layer: 0
   m_Name: SimpleLightningBoltPrefab
   m_TagString: Untagged
@@ -244,7 +244,7 @@ MonoBehaviour:
   timeToDestroy: 1
   side: -1
   damage: 20
---- !u!61 &-246485123521442416
+--- !u!61 &-3677577989021970287
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,7 +257,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10.643256, y: 0.4857971}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -268,5 +268,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.4883842, y: 3.2930498}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0

@@ -31,7 +31,7 @@ public class HealthBase : MonoBehaviour
         if (_isDead) return;
         _currentLife -= damage;
 
-        if(_currentLife <=0)
+        if (_currentLife <= 0)
         {
             Kill();
         }
@@ -39,12 +39,21 @@ public class HealthBase : MonoBehaviour
 
     private void Kill()
     {
-        _isDead = true; 
+        _isDead = true;
 
-        if(destroyOnKill)
+        if (destroyOnKill)
         {
             Destroy(gameObject, delayToKill);
         }
-        OnKill?. Invoke();
+        OnKill?.Invoke();
+        PlayDeathEnemyVFX();
+
+
+
     }
-}
+
+    private void PlayDeathEnemyVFX()
+    {
+        VFXManager.Instance.PlayByTypeVFX(VFXManager.VFXType.DEATH, transform.position);
+    }
+}   

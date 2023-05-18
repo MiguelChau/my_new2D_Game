@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public float distanceToGround;
     public float spaceToGround;
 
+    public AudioSource audioSourceDeath;
     private Animator _currentPlayer;
     private float _currentSpeed;
     public bool _isAttacking;
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
 
     private void OnPlayerKill()
     {
+        
         healthBase.OnKill -= OnPlayerKill;
         _currentPlayer.SetTrigger(sOPlayerSetup.triggerDeath);
 
@@ -66,7 +68,9 @@ public class Player : MonoBehaviour
             {
                 myRigidBody.transform.DOScaleX(-1, sOPlayerSetup.playerSwipeDuration);
             }
+            PlayRunVFX();
             _currentPlayer.SetBool(sOPlayerSetup.boolRun, true);
+
         }   
         else if(Input.GetKey(KeyCode.RightArrow))
         {
@@ -75,7 +79,9 @@ public class Player : MonoBehaviour
             {
                 myRigidBody.transform.DOScaleX(1, sOPlayerSetup.playerSwipeDuration);
             }
+            PlayRunVFX();
             _currentPlayer.SetBool(sOPlayerSetup.boolRun, true);
+
         }
         else
         {
@@ -96,7 +102,7 @@ public class Player : MonoBehaviour
         else
             _currentSpeed = sOPlayerSetup.speed;
 
-        PlayRunVFX();
+        
     }
 
     private void PlayRunVFX()
@@ -109,14 +115,16 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.Space) && IsGrounded())
         {
             myRigidBody.velocity = Vector2.up * sOPlayerSetup.jumpForce;
+            PlayJumpVFX();
             _currentPlayer.SetBool(sOPlayerSetup.boolJump, true);
+    
         }
         else
         {
             _currentPlayer.SetBool(sOPlayerSetup.boolJump, false);
         }
 
-        PlayJumpVFX();
+        
 
     }
 

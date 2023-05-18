@@ -9,6 +9,7 @@ public class SwordAttack : MonoBehaviour
     public int attackDamage;
     public Transform playerSideReference;
     public LayerMask enemyLayers;
+    public AudioSource audioSourceHit;
 
     private void Awake()
     {
@@ -23,11 +24,18 @@ public class SwordAttack : MonoBehaviour
         {
             enemy.Damage(attackDamage);
         }
+        if (audioSourceHit != null) audioSourceHit.Play();
+        PlayHitVFX();
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    private void PlayHitVFX()
+    {
+        VFXManager.Instance.PlayByTypeVFX(VFXManager.VFXType.HIT, transform.position);
     }
 }
