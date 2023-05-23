@@ -16,13 +16,16 @@ public class Player : MonoBehaviour
     public float distanceToGround;
     public float spaceToGround;
 
-    public AudioSource audioSourceDeath;
+   
     private Animator _currentPlayer;
     private float _currentSpeed;
     public bool _isAttacking;
 
-   // public ParticleSystem jumpVFX;
+    // public ParticleSystem jumpVFX;
+    public AudioPlayAudioClips randomJump;
 
+    public float timeToChangeScreen = .2f;
+    public GameOver gameOver;
 
     private void Awake()
     {
@@ -49,6 +52,8 @@ public class Player : MonoBehaviour
         {
             mycollider2D.enabled = false;
         }
+
+        StartCoroutine(TimeChangeScreen());
     }
 
     private void Update()
@@ -117,6 +122,7 @@ public class Player : MonoBehaviour
             myRigidBody.velocity = Vector2.up * sOPlayerSetup.jumpForce;
             PlayJumpVFX();
             _currentPlayer.SetBool(sOPlayerSetup.boolJump, true);
+            if (randomJump != null) randomJump.PlayClips(); 
     
         }
         else
@@ -124,7 +130,7 @@ public class Player : MonoBehaviour
             _currentPlayer.SetBool(sOPlayerSetup.boolJump, false);
         }
 
-        
+
 
     }
 
@@ -161,5 +167,13 @@ public class Player : MonoBehaviour
     public void DestroyMe()
     {
         Destroy(gameObject);
+    }
+
+    IEnumerator TimeChangeScreen()
+    {
+        yield return new WaitForSeconds(timeToChangeScreen);
+        gameOver.ShowGameOverScreen();
+        gameObject.SetActive(false);
+        
     }
 }

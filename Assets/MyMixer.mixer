@@ -19,6 +19,21 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &-6649327840721578323
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Menu
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 5dfb7fc9d60561943957045e6fd60faa
+  m_FloatValues:
+    cc881be12868c444e8f18bec36b1a996: -19.255655
+    b3e883f3ec6cb5f48acba1b452380c2c: -19.255655
+    21f9a94f4ac7f4246acf5be1552f7595: -19.928473
+    5e173c4f4b9e723469dc1023aa04f2f3: -61.594486
+  m_TransitionOverrides: {}
 --- !u!243 &-4952852294679716580
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -81,6 +96,7 @@ AudioMixerController:
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
+  - {fileID: -6649327840721578323}
   - {fileID: 24500006}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
@@ -101,7 +117,7 @@ AudioMixerController:
     - 01ba62bbda8efd1459858f823917e0e1
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -6649327840721578323}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -144,10 +160,11 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: InGame
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: f517530335ae17748afec3b63011c030
   m_FloatValues:
+    b3e883f3ec6cb5f48acba1b452380c2c: -9.332112
     5e173c4f4b9e723469dc1023aa04f2f3: -10.4
   m_TransitionOverrides: {}
 --- !u!244 &4038171754072039958

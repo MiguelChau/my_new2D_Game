@@ -16,6 +16,8 @@ MonoBehaviour:
   friction: {x: -0.1, y: 0}
   speed: 10
   speedRun: 20
-  jumpForce: 10
+  jumpForce: 20
   boolRun: Run
   playerSwipeDuration: 0.1
+  boolJump: Jump
+  triggerDeath: Die
