@@ -7222,8 +7222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4926500895724444a9f90efab83264e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapShot01: {fileID: 24500006, guid: c72ad686211b83241a415af9b8fd7aa7, type: 2}
-  snapShot02: {fileID: -6649327840721578323, guid: c72ad686211b83241a415af9b8fd7aa7, type: 2}
+  snapShot01: {fileID: -6649327840721578323, guid: c72ad686211b83241a415af9b8fd7aa7, type: 2}
+  snapShot02: {fileID: 24500006, guid: c72ad686211b83241a415af9b8fd7aa7, type: 2}
   tagToCompare: Player
 --- !u!212 &1526707457
 SpriteRenderer:

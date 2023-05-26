@@ -117,7 +117,7 @@ public class Player : MonoBehaviour
 
     private void HandleJump()
     {
-        if(Input.GetKey(KeyCode.Space) && IsGrounded())
+        if(Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             myRigidBody.velocity = Vector2.up * sOPlayerSetup.jumpForce;
             PlayJumpVFX();
