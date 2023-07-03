@@ -11,7 +11,7 @@ namespace Screens
     {
         PANEL,
         ABOUT,
-        EXIT
+        PLAY
     }
 
     public class ScreenBase : MonoBehaviour

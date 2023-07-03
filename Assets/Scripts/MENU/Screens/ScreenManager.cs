@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.Singleton;
+using UnityEngine.SceneManagement;
 
 namespace Screens
 {
@@ -26,8 +27,17 @@ namespace Screens
 
             var nextScreen = screenBases.Find(i => i.screenType == type);
 
-            nextScreen.Show();
-            _currentScreen = nextScreen;
+            if (nextScreen != null)
+            {
+                nextScreen.Show();
+                _currentScreen = nextScreen;
+
+                if (type == ScreenType.PLAY) 
+                {
+                    SceneManager.LoadScene(1); 
+                }
+            }  
+            
         }
 
         public void HideAll()
