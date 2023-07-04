@@ -23,21 +23,15 @@ namespace Screens
         }
         public void ShowByType(ScreenType type)
         {
-            if (_currentScreen != null) _currentScreen.Hide();
-
-            var nextScreen = screenBases.Find(i => i.screenType == type);
-
-            if (nextScreen != null)
             {
+                if (_currentScreen != null) _currentScreen.Hide();
+
+                var nextScreen = screenBases.Find(i => i.screenType == type);
+
                 nextScreen.Show();
                 _currentScreen = nextScreen;
+            }
 
-                if (type == ScreenType.PLAY) 
-                {
-                    SceneManager.LoadScene(1); 
-                }
-            }  
-            
         }
 
         public void HideAll()
