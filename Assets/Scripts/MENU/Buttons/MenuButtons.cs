@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 
 public class MenuButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {    
     public ParticleSystem buttonsparticleSystem;
+   
 
     [Header("Animation Buttons")]
     public float finalScale = 1f;
@@ -25,6 +27,7 @@ public class MenuButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void OnClick()
     {
         buttonsparticleSystem.Play();
+        SceneManager.LoadScene(1);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

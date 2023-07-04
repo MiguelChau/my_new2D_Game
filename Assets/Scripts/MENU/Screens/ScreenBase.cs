@@ -11,7 +11,8 @@ namespace Screens
     {
         PANEL,
         ABOUT,
-        PLAY
+        PLAY,
+        OPTIONS
     }
 
     public class ScreenBase : MonoBehaviour
@@ -46,7 +47,7 @@ namespace Screens
         public void Hide()
         {
             HideObjects();
-            Debug.Log("Show");
+            Debug.Log("Hide");
         }
 
         private void HideObjects()
