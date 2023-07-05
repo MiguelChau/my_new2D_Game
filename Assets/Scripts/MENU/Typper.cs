@@ -10,6 +10,8 @@ public class Typper : MonoBehaviour
     public float timeBetweenLetters = .1f;
     public string phrase;
 
+    private Coroutine typeCoroutine;
+
     private void Awake()
     {
         textMesh.text = ""; 
@@ -18,7 +20,11 @@ public class Typper : MonoBehaviour
     [Button]
     public void StartType()
     {
-        StartCoroutine(Type(phrase));
+        if (typeCoroutine != null)
+        {
+            StopCoroutine(typeCoroutine);
+        }
+        typeCoroutine = StartCoroutine(Type(phrase));
     }
      IEnumerator Type(string s)
      {
@@ -28,6 +34,6 @@ public class Typper : MonoBehaviour
             textMesh.text += l;
             yield return new WaitForSeconds(timeBetweenLetters);
         }
-        
-     }
+        typeCoroutine = null;
+    }
 }

@@ -27,7 +27,7 @@ public class MenuButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void OnClick()
     {
         buttonsparticleSystem.Play();
-        SceneManager.LoadScene(1);
+        StartCoroutine(WaitAndLoadScene(1f));
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -41,5 +41,11 @@ public class MenuButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         Debug.Log("Exit");
         _currentTween.Kill();
         transform.localScale = _defaultScale; 
+    }
+
+    private IEnumerator WaitAndLoadScene(float timetoWait)
+    {
+        yield return new WaitForSeconds(timetoWait);
+        SceneManager.LoadScene(1);
     }
 }
