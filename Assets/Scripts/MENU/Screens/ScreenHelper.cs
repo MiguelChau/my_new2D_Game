@@ -7,12 +7,20 @@ namespace Screens
     public class ScreenHelper : MonoBehaviour
     {
         public ScreenType screenType;
-        
+
+        public float delayOnLoad = .5f;
+
 
         public void OnClick()
         {
-            ScreenManager.Instance.ShowByType(screenType);
+            StartCoroutine(ShowScreenWithDelay());
             
+        }
+
+        private IEnumerator ShowScreenWithDelay()
+        {
+            yield return new WaitForSeconds(delayOnLoad);
+            ScreenManager.Instance.ShowByType(screenType);
         }
     }
 
