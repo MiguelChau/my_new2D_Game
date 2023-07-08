@@ -20,6 +20,8 @@ public class EnemyBase : MonoBehaviour
         {
             healthBase.OnKill += OnEnemyKill;
         }
+
+        transform.Scale(1.3f);
     }
 
     private void OnEnemyKill()

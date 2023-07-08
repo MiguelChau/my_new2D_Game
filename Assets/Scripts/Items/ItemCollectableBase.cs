@@ -14,7 +14,7 @@ public class ItemCollectableBase : MonoBehaviour
 
     private void Awake()
     {
-        
+        gameObject.Scale(0.8f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

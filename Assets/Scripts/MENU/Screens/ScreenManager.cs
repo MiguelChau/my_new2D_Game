@@ -10,6 +10,7 @@ namespace Screens
     public class ScreenManager : Singleton<ScreenManager>
     {
         public List<ScreenBase> screenBases;
+        public List<GameObject> objs;
 
         public ScreenType startScreen = ScreenType.PANEL;
 
@@ -18,6 +19,7 @@ namespace Screens
 
         private void Start()
         {
+
             HideAll();
             ShowByType(startScreen);
         }

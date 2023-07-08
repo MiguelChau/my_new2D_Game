@@ -2884,6 +2884,7 @@ MonoBehaviour:
   - {fileID: 205697503}
   - {fileID: 637990682}
   - {fileID: 296468778}
+  objs: []
   startScreen: 0
 --- !u!1 &869320649
 GameObject:
